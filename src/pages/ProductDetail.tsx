@@ -151,6 +151,37 @@ export function ProductDetail() {
           </section>
         )}
 
+        {/* 适用工具 */}
+        {product.supportedTools && product.supportedTools.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              适用工具
+            </h2>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {product.supportedTools.map((tool) => (
+                <span
+                  key={tool}
+                  className="rounded-full border border-border bg-surface px-3 py-1.5 text-sm text-text-secondary"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 更新方式 */}
+        {product.updatePolicy && (
+          <section className="mt-10">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              更新方式
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+              {product.updatePolicy}
+            </p>
+          </section>
+        )}
+
         <div className="mt-10 flex flex-col gap-4">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             {product.buyUrl ? (
@@ -170,14 +201,11 @@ export function ProductDetail() {
                 立即购买
               </button>
             )}
-
-            <Link
-              to="/"
-              className="inline-flex h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent"
-            >
-              返回首页
-            </Link>
           </div>
+
+          <Link to="/" className="mt-2 text-sm text-text-muted hover:text-text-primary transition-colors">
+            ← 返回首页
+          </Link>
 
           {showBuyTip && (
             <div className="rounded-xl border border-accent/30 bg-accent-soft p-5 text-sm">

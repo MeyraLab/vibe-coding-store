@@ -14,20 +14,20 @@ function App() {
           <a href="/" className="text-sm font-medium tracking-tight text-text-primary">
             Vibe Coding
           </a>
-          <nav className="flex items-center gap-6 text-sm text-text-secondary">
-            <a href="#products" className="hover:text-text-primary transition-colors">
+          <nav className="flex max-w-[60%] items-center gap-4 overflow-x-auto whitespace-nowrap text-sm text-text-secondary sm:max-w-none sm:gap-6">
+            <a href="#products" className="shrink-0 hover:text-text-primary transition-colors">
               产品
             </a>
-            <a href="#about" className="hover:text-text-primary transition-colors">
+            <a href="#about" className="shrink-0 hover:text-text-primary transition-colors">
               关于
             </a>
-            <a href="#updates" className="hover:text-text-primary transition-colors">
+            <a href="#updates" className="shrink-0 hover:text-text-primary transition-colors">
               更新
             </a>
-            <a href="#stories" className="hover:text-text-primary transition-colors">
-              场景
+            <a href="#workflow" className="shrink-0 hover:text-text-primary transition-colors">
+              工作流
             </a>
-            <a href="#faq" className="hover:text-text-primary transition-colors">
+            <a href="#faq" className="shrink-0 hover:text-text-primary transition-colors">
               FAQ
             </a>
           </nav>
@@ -38,11 +38,10 @@ function App() {
       <section className="mx-auto max-w-6xl px-4 pt-20 pb-24 sm:px-6 sm:pt-28 sm:pb-32">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-medium tracking-tight text-text-primary sm:text-5xl sm:leading-[1.15]">
-            让写代码也有 vibe
+            少把周末花在重复劳动上
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-text-secondary">
-            我做的工具，专注于让编程过程更顺畅、更有感觉。
-            先从中文市场开始，一步一步打磨真正好用的 vibe coding 产品。
+            中文场景的 Prompt、规则片段和脚手架，帮你少配环境、少重写提示词，更快进入写功能的状态。
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
@@ -74,7 +73,7 @@ function App() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-border bg-canvas p-5">
               <p className="text-sm font-medium text-text-primary">周五晚上 22:00</p>
               <p className="mt-2 text-sm leading-relaxed text-text-secondary">
@@ -121,7 +120,7 @@ function App() {
             我的工具
           </h2>
           <p className="mt-2 text-text-secondary">
-            专注提升编程体验的实用工具，持续更新中。
+            三个小工具，分别解决：启动摩擦、提示词试错、卡住时没指令。
           </p>
         </div>
 
@@ -132,38 +131,69 @@ function App() {
         </div>
       </section>
 
-      {/* 使用场景 */}
-      <section id="stories" className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32">
-        <div className="mb-10">
+      {/* 周末工作流 */}
+      <section id="workflow" className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32">
+        <div className="mb-10 max-w-2xl">
           <h2 className="text-2xl font-medium tracking-tight text-text-primary sm:text-3xl">
-            使用场景
+            周末独立开发者 AI 工作流
           </h2>
           <p className="mt-2 text-text-secondary">
-            这些工具是为真实工作流设计的，不是演示。
+            一份可直接照着做的节奏。目标不是「更勤奋」，而是少把时间花在重复劳动上。
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-2xl border border-border bg-surface p-5">
-            <p className="text-sm leading-relaxed text-text-secondary">
-              「周末想启动一个 side project，但不想从零配环境。用 Code Flow 模板，十分钟就能进入写功能的状态。」
+        <div className="max-w-2xl space-y-6">
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <div className="flex items-center gap-3">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent-soft text-xs font-medium text-accent">1</span>
+              <h3 className="text-sm font-medium text-text-primary">周五晚：15 分钟启动，不配环境</h3>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+              用现成脚手架打开项目，确认暗色主题与目录可用，就停。不追求完美结构，只保证明天能写功能。
             </p>
-            <p className="mt-4 text-xs text-text-muted">独立开发者 · 副业项目</p>
+            <a href="#products" className="mt-3 inline-block text-xs text-accent hover:underline">相关：Code Flow 模板 →</a>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface p-5">
-            <p className="text-sm leading-relaxed text-text-secondary">
-              「用 AI 写代码时总要反复改提示词。Vibe Prompt Kit 把高频场景整理好了，直接复制就能用，感觉顺很多。」
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <div className="flex items-center gap-3">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent-soft text-xs font-medium text-accent">2</span>
+              <h3 className="text-sm font-medium text-text-primary">周六：写功能时用固定 Prompt，少试错</h3>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+              每个任务先选场景指令（生成 / 重构 / UI / 文档），带上约束和验收标准再交给 AI。避免一轮对话改到面目全非。
             </p>
-            <p className="mt-4 text-xs text-text-muted">前端工程师 · 日常开发</p>
+            <a href="#products" className="mt-3 inline-block text-xs text-accent hover:underline">相关：Vibe Prompt Kit →</a>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface p-5">
-            <p className="text-sm leading-relaxed text-text-secondary">
-              「调试和重构时经常卡住。AI 编程速查放在手边，卡住就翻一下对应指令，比自己临时想提示词快。」
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <div className="flex items-center gap-3">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent-soft text-xs font-medium text-accent">3</span>
+              <h3 className="text-sm font-medium text-text-primary">卡住时：先查场景指令，再开新对话</h3>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+              调试或解释报错时，用速查表里的写法，而不是在同一长对话里反复追问。上下文膨胀会更费 token、更容易跑偏。
             </p>
-            <p className="mt-4 text-xs text-text-muted">全栈开发 · 问题排查</p>
+            <a href="#products" className="mt-3 inline-block text-xs text-accent hover:underline">相关：AI 编程速查 →</a>
           </div>
+
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <div className="flex items-center gap-3">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent-soft text-xs font-medium text-accent">4</span>
+              <h3 className="text-sm font-medium text-text-primary">周日：只收尾一件可演示的事</h3>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+              周末结束前，保证有一个能打开、能点的结果（一个页面、一个流程、一份 README）。比「代码写了很多但什么都演示不了」更重要。
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8">
+          <a
+            href="#products"
+            className="inline-flex h-10 items-center justify-center rounded-full bg-cta px-6 text-sm font-medium text-cta-text transition-opacity hover:opacity-90"
+          >
+            按这个节奏选工具
+          </a>
         </div>
       </section>
 
@@ -198,28 +228,45 @@ function App() {
             更新
           </h2>
           <p className="mt-2 text-text-secondary">
-            产品迭代记录，持续更新中。
+            按产品记录。已购买用户：标注「需重新下载」的条目请联系我补发最新文件。
           </p>
         </div>
 
         <div className="space-y-6 max-w-2xl">
           <div className="border-l-2 border-border pl-5">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="text-sm font-medium text-text-primary">2026.08.16</span>
-              <span className="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs text-accent">新上线</span>
+              <span className="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs text-accent">全站</span>
             </div>
             <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-              网站正式上线。首批上架 3 个工具：Vibe Prompt Kit、Code Flow 模板、AI 编程速查。
+              <span className="text-text-primary">网站上线。</span>
+              首批可购：Vibe Prompt Kit、Code Flow 模板、AI 编程速查。购买走微信，发货为下载链接。
             </p>
+            <p className="mt-1 text-xs text-text-muted">无需重下（首次购买即最新）</p>
           </div>
 
           <div className="border-l-2 border-border pl-5">
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-medium text-text-primary">2026.08</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-sm font-medium text-text-primary">2026.08.16</span>
+              <span className="rounded-full border border-border px-2.5 py-0.5 text-xs text-text-secondary">文案 / 结构</span>
             </div>
             <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-              完成产品定位与中文市场优先策略，开始打磨第一批 vibe coding 工具。
+              <span className="text-text-primary">详情页与首页：</span>
+              补充开箱说明、适用工具与更新方式；首页增加周末独立开发者场景区块。
             </p>
+            <p className="mt-1 text-xs text-text-muted">仅网站展示，不影响已购文件</p>
+          </div>
+
+          <div className="border-l-2 border-border pl-5">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-sm font-medium text-text-primary">2026.08</span>
+              <span className="rounded-full border border-border px-2.5 py-0.5 text-xs text-text-secondary">定位</span>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              <span className="text-text-primary">产品方向：</span>
+              中文市场优先，服务周末独立开发者——减少启动摩擦与提示词试错。
+            </p>
+            <p className="mt-1 text-xs text-text-muted">策略记录，无文件变更</p>
           </div>
         </div>
       </section>
@@ -309,7 +356,7 @@ function App() {
             <a href="#products" className="hover:text-text-primary transition-colors">产品</a>
             <a href="#about" className="hover:text-text-primary transition-colors">关于</a>
             <a href="#updates" className="hover:text-text-primary transition-colors">更新</a>
-            <a href="#stories" className="hover:text-text-primary transition-colors">场景</a>
+            <a href="#workflow" className="hover:text-text-primary transition-colors">工作流</a>
             <a href="#faq" className="hover:text-text-primary transition-colors">FAQ</a>
           </div>
           <div className="text-sm text-text-muted">
