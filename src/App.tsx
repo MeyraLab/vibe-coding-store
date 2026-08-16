@@ -61,6 +61,59 @@ function App() {
         </div>
       </section>
 
+      {/* 专为周末独立开发者 */}
+      <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32">
+        <div className="rounded-2xl border border-border bg-surface p-6 sm:p-10">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium text-accent">专为周末独立开发者</p>
+            <h2 className="mt-3 text-2xl font-medium tracking-tight text-text-primary sm:text-3xl">
+              你只有周末？那我们就为这个场景做工具。
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-text-secondary">
+              真正能投入的高质量时间只有 8–15 小时。最怕的不是不会写代码，而是启动时配环境、写功能时反复调提示词，把心流一点点耗掉。
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-xl border border-border bg-canvas p-5">
+              <p className="text-sm font-medium text-text-primary">周五晚上 22:00</p>
+              <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                想启动新想法，却不想再花 1 小时配暗色主题和目录结构。
+              </p>
+              <p className="mt-4 text-xs text-accent">→ Code Flow 模板</p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-canvas p-5">
+              <p className="text-sm font-medium text-text-primary">写功能时</p>
+              <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                不想每次都重新发明中文提示词，也不想 AI 输出「能跑但不是我的代码」。
+              </p>
+              <p className="mt-4 text-xs text-accent">→ Vibe Prompt Kit</p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-canvas p-5">
+              <p className="text-sm font-medium text-text-primary">卡住的时候</p>
+              <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                需要一份靠谱的中文指令速查，而不是再去搜英文模板自己翻译。
+              </p>
+              <p className="mt-4 text-xs text-accent">→ AI 编程速查</p>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href="#products"
+              className="inline-flex h-10 items-center justify-center rounded-full bg-cta px-6 text-sm font-medium text-cta-text transition-opacity hover:opacity-90"
+            >
+              查看适合你的工具
+            </a>
+            <p className="text-sm text-text-muted">
+              买完立刻能用，不用再研究一遍。
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 产品列表 */}
       <section id="products" className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32">
         <div className="mb-10">
