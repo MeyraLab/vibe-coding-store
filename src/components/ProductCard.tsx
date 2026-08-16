@@ -7,14 +7,25 @@ interface ProductCardProps {
     description: string
     price: string
     tag?: string
+    image?: string
   }
 }
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group relative rounded-2xl border border-border bg-surface p-5 transition-all duration-200 hover:border-border-strong hover:shadow-[0_0_0_1px_rgba(94,106,210,0.3),0_0_24px_rgba(94,106,210,0.12)]">
-      <div className="mb-5 aspect-[16/10] w-full overflow-hidden rounded-xl bg-surface-elevated flex items-center justify-center">
-        <span className="text-sm text-text-muted">产品截图</span>
+      <div className="mb-5 aspect-[16/10] w-full overflow-hidden rounded-xl bg-surface-elevated">
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center">
+            <span className="text-sm text-text-muted">产品截图</span>
+          </div>
+        )}
       </div>
 
       <div className="flex items-start justify-between gap-3">

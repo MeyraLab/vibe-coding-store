@@ -32,8 +32,18 @@ export function ProductDetail() {
       </header>
 
       <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-        <div className="mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-surface-elevated flex items-center justify-center">
-          <span className="text-text-muted">产品截图</span>
+        <div className="mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-surface-elevated">
+          {product.image ? (
+            <img
+              src={product.image}
+              alt={product.name}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center">
+              <span className="text-text-muted">产品截图</span>
+            </div>
+          )}
         </div>
 
         <div className="flex items-start justify-between gap-4">

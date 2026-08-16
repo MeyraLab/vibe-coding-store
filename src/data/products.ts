@@ -7,6 +7,7 @@ export interface Product {
   longDescription?: string
   buyUrl?: string
   wechat?: string
+  image?: string
 }
 
 export const products: Product[] = [
@@ -18,6 +19,7 @@ export const products: Product[] = [
     tag: '热门',
     longDescription: '包含高频场景的 Prompt 模板库，覆盖代码生成、重构、文档、UI 描述等。适合想提升 AI 编程效率的独立开发者。',
     buyUrl: '', // 以后可填爱发电链接，例如 https://afdian.com/item/xxx
+    image: '/products/vibe-prompt-kit.svg',
     wechat: 'MEYRA1219' // 改成你的微信号
   },
   {
@@ -27,6 +29,7 @@ export const products: Product[] = [
     price: '¥79',
     longDescription: '基于 Vite + React + Tailwind 的现代脚手架，预设暗色主题、组件结构和代码规范，帮助你快速启动有 vibe 的项目。',
     buyUrl: '',
+    image: '/products/code-flow.svg',
     wechat: 'MEYRA1219'
   },
   {
@@ -36,6 +39,7 @@ export const products: Product[] = [
     price: '¥29',
     longDescription: '整理最常用的 AI 编程指令、调试技巧和场景模板，中文优先，方便随时查阅。',
     buyUrl: '',
+    image: '/products/ai-cheatsheet.svg',
     wechat: 'MEYRA1219'
   }
 ]
