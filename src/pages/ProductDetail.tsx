@@ -151,6 +151,37 @@ export function ProductDetail() {
           </section>
         )}
 
+        {/* 适用工具 */}
+        {product.supportedTools && product.supportedTools.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              适用工具
+            </h2>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {product.supportedTools.map((tool) => (
+                <span
+                  key={tool}
+                  className="rounded-full border border-border bg-surface px-3 py-1.5 text-sm text-text-secondary"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 更新方式 */}
+        {product.updatePolicy && (
+          <section className="mt-10">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              更新方式
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+              {product.updatePolicy}
+            </p>
+          </section>
+        )}
+
         <div className="mt-10 flex flex-col gap-4">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             {product.buyUrl ? (

@@ -106,7 +106,7 @@ export const products: Product[] = [
       '执行 npm install',
       '执行 npm run dev，浏览器打开本地地址',
       '按 README 修改页面与组件，开始写功能',
-      '需要统一 AI 规则时，把规则片段放进项目根目录'
+      '需要统一 AI 规则时，可搭配 Vibe Prompt Kit 中的规则片段'
     ],
     supportedTools: ['Node.js + npm / pnpm', 'Cursor / VS Code', '现代浏览器'],
     updatePolicy: '购买后可享受模板后续更新，重大结构变更会说明迁移方式。'
