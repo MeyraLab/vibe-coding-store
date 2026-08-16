@@ -21,7 +21,7 @@ export const products: Product[] = [
   {
     id: 'vibe-prompt-kit',
     name: 'Vibe Prompt Kit',
-    description: '别再每次自己发明中文提示词。场景 Prompt + 规则片段，复制就能用。',
+    description: '别再每次自己发明中文提示词。场景 Prompt，复制就能用。',
     price: '¥49',
     tag: '热门',
     longDescription:
@@ -68,7 +68,7 @@ export const products: Product[] = [
   {
     id: 'code-flow',
     name: 'Code Flow 模板',
-    description: '别再花一小时配暗色主题和目录。开箱即用，约 15 分钟进入写功能。',
+    description: '别再花一小时配暗色主题和目录。开箱约 15 分钟进入写功能。',
     price: '¥79',
     longDescription:
       '基于 Vite + React + TypeScript + Tailwind 的现代脚手架，预设暗色主题与 Linear 风格设计 token、目录规范与开发体验优化。目标是让周末独立开发者在约 15 分钟内进入「写功能」状态，而不是先花一小时配环境。',

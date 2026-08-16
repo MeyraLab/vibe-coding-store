@@ -201,14 +201,11 @@ export function ProductDetail() {
                 立即购买
               </button>
             )}
-
-            <Link
-              to="/"
-              className="inline-flex h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent"
-            >
-              返回首页
-            </Link>
           </div>
+
+          <Link to="/" className="mt-2 text-sm text-text-muted hover:text-text-primary transition-colors">
+            ← 返回首页
+          </Link>
 
           {showBuyTip && (
             <div className="rounded-xl border border-accent/30 bg-accent-soft p-5 text-sm">

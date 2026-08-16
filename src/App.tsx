@@ -24,9 +24,6 @@ function App() {
             <a href="#updates" className="shrink-0 hover:text-text-primary transition-colors">
               更新
             </a>
-            <a href="#stories" className="shrink-0 hover:text-text-primary transition-colors">
-              场景
-            </a>
             <a href="#workflow" className="shrink-0 hover:text-text-primary transition-colors">
               工作流
             </a>
@@ -54,10 +51,10 @@ function App() {
               查看工具
             </a>
             <a
-              href="#stories"
+              href="#about"
               className="text-sm text-text-secondary transition-colors hover:text-text-primary"
             >
-              看看怎么用 →
+              了解我的想法 →
             </a>
           </div>
         </div>
@@ -131,44 +128,6 @@ function App() {
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-        </div>
-      </section>
-
-      {/* 使用场景 */}
-      <section id="stories" className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32">
-        <div className="mb-10">
-          <h2 className="text-2xl font-medium tracking-tight text-text-primary sm:text-3xl">
-            使用场景
-          </h2>
-          <p className="mt-2 text-text-secondary">
-            以下是为真实工作流设计的典型场景，不是用户评价。有真实反馈后会替换成真实声音。
-          </p>
-        </div>
-
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-2xl border border-border bg-surface p-5">
-            <p className="text-xs font-medium text-accent">场景 · 启动</p>
-            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-              周五晚上有想法，但不想再花一小时配暗色主题和目录。用现成脚手架，尽快进入写功能。
-            </p>
-            <p className="mt-4 text-xs text-text-muted">对应：Code Flow 模板</p>
-          </div>
-
-          <div className="rounded-2xl border border-border bg-surface p-5">
-            <p className="text-xs font-medium text-accent">场景 · 写功能</p>
-            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-              用 AI 写代码时不想每次重写中文提示词，也不想得到「能跑但不是我的风格」的结果。
-            </p>
-            <p className="mt-4 text-xs text-text-muted">对应：Vibe Prompt Kit</p>
-          </div>
-
-          <div className="rounded-2xl border border-border bg-surface p-5">
-            <p className="text-xs font-medium text-accent">场景 · 卡住</p>
-            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-              调试或重构卡壳时，需要一份按场景整理的中文指令，而不是再去搜英文模板自己翻译。
-            </p>
-            <p className="mt-4 text-xs text-text-muted">对应：AI 编程速查</p>
-          </div>
         </div>
       </section>
 
@@ -397,7 +356,6 @@ function App() {
             <a href="#products" className="hover:text-text-primary transition-colors">产品</a>
             <a href="#about" className="hover:text-text-primary transition-colors">关于</a>
             <a href="#updates" className="hover:text-text-primary transition-colors">更新</a>
-            <a href="#stories" className="hover:text-text-primary transition-colors">场景</a>
             <a href="#workflow" className="hover:text-text-primary transition-colors">工作流</a>
             <a href="#faq" className="hover:text-text-primary transition-colors">FAQ</a>
           </div>
