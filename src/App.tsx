@@ -21,6 +21,9 @@ function App() {
             <a href="#updates" className="hover:text-text-primary transition-colors">
               更新
             </a>
+            <a href="#faq" className="hover:text-text-primary transition-colors">
+              FAQ
+            </a>
           </nav>
         </div>
       </header>
@@ -127,6 +130,62 @@ function App() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32">
+        <div className="mb-10">
+          <h2 className="text-2xl font-medium tracking-tight text-text-primary sm:text-3xl">
+            常见问题
+          </h2>
+          <p className="mt-2 text-text-secondary">
+            关于购买、发货与产品使用的常见疑问。
+          </p>
+        </div>
+
+        <div className="max-w-2xl space-y-4">
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <h3 className="text-sm font-medium text-text-primary">如何购买？</h3>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              进入产品详情页，点击「立即购买」，添加微信号 MEYRA1219，备注产品名称即可。支持微信支付和支付宝。
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <h3 className="text-sm font-medium text-text-primary">购买后多久能收到？</h3>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              确认支付后，通常在 1–12 小时内通过微信或邮箱发送下载链接。大部分情况会更快处理。
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <h3 className="text-sm font-medium text-text-primary">支持退款吗？</h3>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              数字产品一旦发送下载链接后原则上不支持退款。如遇文件损坏或无法打开，请及时联系我，我会协助解决或补发。
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <h3 className="text-sm font-medium text-text-primary">产品会持续更新吗？</h3>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              会。购买后可享受对应产品的后续更新。重大更新会通过微信或网站「更新」区块通知。
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <h3 className="text-sm font-medium text-text-primary">适合什么人使用？</h3>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              主要面向独立开发者、想提升 AI 编程效率的工程师，以及喜欢暗色界面与简洁工作流的人。新手也能直接上手。
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <h3 className="text-sm font-medium text-text-primary">可以商用吗？</h3>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              可以用于个人项目和商业项目。禁止二次销售或公开重新分发原文件。具体授权以购买时说明为准。
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 页脚 */}
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-10 sm:flex-row sm:items-center sm:px-6">
@@ -140,6 +199,7 @@ function App() {
             <a href="#products" className="hover:text-text-primary transition-colors">产品</a>
             <a href="#about" className="hover:text-text-primary transition-colors">关于</a>
             <a href="#updates" className="hover:text-text-primary transition-colors">更新</a>
+            <a href="#faq" className="hover:text-text-primary transition-colors">FAQ</a>
           </div>
           <div className="text-sm text-text-muted">
             © 2026 Vibe Coding
