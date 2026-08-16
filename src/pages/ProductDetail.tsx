@@ -62,6 +62,59 @@ export function ProductDetail() {
           {product.longDescription || product.description}
         </p>
 
+        {/* 功能列表 */}
+        {product.features && product.features.length > 0 && (
+          <section className="mt-12">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              包含什么
+            </h2>
+            <ul className="mt-4 space-y-3">
+              {product.features.map((item) => (
+                <li key={item} className="flex gap-3 text-sm leading-relaxed text-text-secondary">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* 适用人群 */}
+        {product.audience && product.audience.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              适合谁
+            </h2>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {product.audience.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-border bg-surface px-3 py-1.5 text-sm text-text-secondary"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 使用场景 */}
+        {product.scenarios && product.scenarios.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              使用场景
+            </h2>
+            <ul className="mt-4 space-y-3">
+              {product.scenarios.map((item) => (
+                <li key={item} className="flex gap-3 text-sm leading-relaxed text-text-secondary">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/60" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         <div className="mt-10 flex flex-col gap-4">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             {product.buyUrl ? (
