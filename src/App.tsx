@@ -1,5 +1,6 @@
 import './index.css'
 import { ProductCard } from './components/ProductCard'
+import { products } from './data/products'
 
 function App() {
   return (
@@ -63,22 +64,9 @@ function App() {
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <ProductCard
-            name="Vibe Prompt Kit"
-            description="一套经过实战打磨的 Prompt 模板，帮你更快写出有感觉的代码和文案。"
-            price="¥49"
-            tag="热门"
-          />
-          <ProductCard
-            name="Code Flow 模板"
-            description="开箱即用的项目脚手架，内置暗色主题、组件规范和开发体验优化。"
-            price="¥79"
-          />
-          <ProductCard
-            name="AI 编程速查"
-            description="高频场景的 AI 编程技巧与命令速查表，中文优先，持续更新。"
-            price="¥29"
-          />
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
       </section>
 
@@ -101,6 +89,39 @@ function App() {
             <p>
               这里卖的不是大而全的平台，而是小而准的工具。
               每一个产品都会持续打磨，欢迎反馈。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 更新日志 */}
+      <section id="updates" className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32">
+        <div className="mb-10">
+          <h2 className="text-2xl font-medium tracking-tight text-text-primary sm:text-3xl">
+            更新
+          </h2>
+          <p className="mt-2 text-text-secondary">
+            产品迭代记录，持续更新中。
+          </p>
+        </div>
+
+        <div className="space-y-6 max-w-2xl">
+          <div className="border-l-2 border-border pl-5">
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-medium text-text-primary">2026.08.16</span>
+              <span className="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs text-accent">新上线</span>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              网站正式上线。首批上架 3 个工具：Vibe Prompt Kit、Code Flow 模板、AI 编程速查。
+            </p>
+          </div>
+
+          <div className="border-l-2 border-border pl-5">
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-medium text-text-primary">2026.08</span>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              完成产品定位与中文市场优先策略，开始打磨第一批 vibe coding 工具。
             </p>
           </div>
         </div>
