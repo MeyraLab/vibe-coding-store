@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { products } from '../data/products'
 
 export function ProductDetail() {
   const { id } = useParams<{ id: string }>()
   const product = products.find((p) => p.id === id)
+  const [showBuyTip, setShowBuyTip] = useState(false)
 
   if (!product) {
     return (
@@ -50,34 +52,51 @@ export function ProductDetail() {
           {product.longDescription || product.description}
         </p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-          {product.buyUrl ? (
-            <a
-              href={product.buyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-11 items-center justify-center rounded-full bg-cta px-8 text-sm font-medium text-cta-text transition-opacity hover:opacity-90"
-            >
-              立即购买
-            </a>
-          ) : (
-            <button
-              onClick={() => {
-                // 简单提示，后续可换成弹窗
-                alert(`请添加微信购买：${product.wechat || '请联系作者'}\n\n添加后备注产品名称，我会尽快发送下载链接。`)
-              }}
-              className="inline-flex h-11 items-center justify-center rounded-full bg-cta px-8 text-sm font-medium text-cta-text transition-opacity hover:opacity-90"
-            >
-              立即购买
-            </button>
-          )}
+        <div className="mt-10 flex flex-col gap-4">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            {product.buyUrl ? (
+              <a
+                href={product.buyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-11 items-center justify-center rounded-full bg-cta px-8 text-sm font-medium text-cta-text transition-opacity hover:opacity-90"
+              >
+                立即购买
+              </a>
+            ) : (
+              <button
+                onClick={() => setShowBuyTip(true)}
+                className="inline-flex h-11 items-center justify-center rounded-full bg-cta px-8 text-sm font-medium text-cta-text transition-opacity hover:opacity-90"
+              >
+                立即购买
+              </button>
+            )}
 
-          <Link
-            to="/"
-            className="inline-flex h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent"
-          >
-            返回首页
-          </Link>
+            <Link
+              to="/"
+              className="inline-flex h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent"
+            >
+              返回首页
+            </Link>
+          </div>
+
+          {showBuyTip && (
+            <div className="rounded-xl border border-accent/30 bg-accent-soft p-5 text-sm">
+              <p className="font-medium text-text-primary mb-2">添加微信购买</p>
+              <p className="text-text-secondary mb-3">
+                微信号：<span className="text-accent font-medium select-all">{product.wechat || '请联系作者'}</span>
+              </p>
+              <p className="text-text-muted text-xs leading-relaxed">
+                添加后请备注产品名称「{product.name}」，我会尽快发送下载链接。支持微信支付 / 支付宝。
+              </p>
+              <button
+                onClick={() => setShowBuyTip(false)}
+                className="mt-4 text-xs text-text-secondary hover:text-text-primary transition-colors"
+              >
+                关闭
+              </button>
+            </div>
+          )}
         </div>
 
         {/* 购买说明 */}
