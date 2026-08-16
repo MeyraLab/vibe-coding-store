@@ -50,16 +50,44 @@ export function ProductDetail() {
           {product.longDescription || product.description}
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-4">
-          <button className="inline-flex h-11 items-center justify-center rounded-full bg-cta px-8 text-sm font-medium text-cta-text transition-opacity hover:opacity-90">
-            立即购买
-          </button>
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+          {product.buyUrl ? (
+            <a
+              href={product.buyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-11 items-center justify-center rounded-full bg-cta px-8 text-sm font-medium text-cta-text transition-opacity hover:opacity-90"
+            >
+              立即购买
+            </a>
+          ) : (
+            <button
+              onClick={() => {
+                // 简单提示，后续可换成弹窗
+                alert(`请添加微信购买：${product.wechat || '请联系作者'}\n\n添加后备注产品名称，我会尽快发送下载链接。`)
+              }}
+              className="inline-flex h-11 items-center justify-center rounded-full bg-cta px-8 text-sm font-medium text-cta-text transition-opacity hover:opacity-90"
+            >
+              立即购买
+            </button>
+          )}
+
           <Link
             to="/"
             className="inline-flex h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent"
           >
             返回首页
           </Link>
+        </div>
+
+        {/* 购买说明 */}
+        <div className="mt-8 rounded-xl border border-border bg-surface p-5 text-sm text-text-secondary">
+          <p className="font-medium text-text-primary mb-2">购买方式</p>
+          <ul className="space-y-1.5 list-disc list-inside">
+            <li>点击「立即购买」后添加微信，备注产品名称</li>
+            <li>支付成功后我会发送下载链接到你的邮箱或微信</li>
+            <li>支持微信支付 / 支付宝（通过微信沟通）</li>
+          </ul>
         </div>
       </main>
     </div>
