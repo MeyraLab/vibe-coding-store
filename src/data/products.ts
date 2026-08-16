@@ -13,7 +13,7 @@ export interface Product {
   scenarios?: string[]
   deliverables?: string[]
   gettingStarted?: string[]
-  tools?: string[]
+  supportedTools?: string[]
   updatePolicy?: string
 }
 
@@ -25,16 +25,16 @@ export const products: Product[] = [
     price: '¥49',
     tag: '热门',
     longDescription:
-      '面向周末独立开发者的中文 Prompt 与规则包。覆盖代码生成、重构、调试、文档、UI 描述等高频场景，并附带可直接放入项目的 .cursorrules / CLAUDE.md 示例片段。强调可验证、可复制，而不是空泛的「提升效率」。',
+      '经过实战打磨的中文场景 Prompt 与规则片段，覆盖代码生成、重构、调试、文档、UI 描述。同时提供可直接放入项目的 .cursorrules / CLAUDE.md 示例，减少「每次重新发明提示词」和「AI 写出能跑但不是我的代码」的问题。',
     buyUrl: '',
     image: '/products/vibe-prompt-kit.svg',
     wechat: 'MEYRA1219',
     features: [
-      '场景 Prompt：代码生成、重构、调试、文档、UI 描述',
-      '附带 .cursorrules 与 CLAUDE.md 示例片段，可直接放进项目',
-      '中文优先，贴合中文开发者表达与业务习惯',
-      '写法带验收标准，减少 AI「能跑但不是你的代码」',
-      '持续更新，跟随 Cursor / Claude 等工具变化'
+      '高频中文场景 Prompt：生成、重构、调试、文档、UI 描述',
+      '附带 .cursorrules 与 CLAUDE.md 示例片段，跨 Cursor / Claude Code 可用',
+      '强调约束与验收标准，减少模糊指令导致的返工',
+      '中文优先，贴合中文注释、业务表达与国内开发习惯',
+      '可直接复制使用，也可按项目微调；含后续更新权限'
     ],
     audience: [
       '周末做 side project 的独立开发者',
@@ -50,20 +50,20 @@ export const products: Product[] = [
       '调试报错时用带上下文的排查指令'
     ],
     deliverables: [
-      '场景 Prompt 模板文件（Markdown，可直接复制）',
+      '场景分类 Prompt 模板文件（Markdown，可直接复制）',
       '示例 .cursorrules 与 CLAUDE.md 片段',
-      '按场景分类的使用说明与微调建议',
-      '后续更新权限（微信通知）'
+      '使用说明与微调建议',
+      '后续内容更新权限（微信通知）'
     ],
     gettingStarted: [
-      '下载并解压文件',
-      '打开对应场景的 Prompt，复制到 Cursor / Claude / ChatGPT',
-      '如需项目级规则，将示例片段放入 .cursorrules 或 CLAUDE.md',
-      '按项目改关键词与约束，第一次跑通后保存自己的版本',
-      '卡住时微信联系我，备注产品名称'
+      '解压/打开文件，按场景找到对应 Prompt',
+      '需要项目级约束时，把示例规则复制到 .cursorrules 或 CLAUDE.md',
+      '将 Prompt 粘贴到 Cursor / Claude / ChatGPT 使用',
+      '按项目技术栈微调关键词与约束',
+      '遇到问题微信联系，备注产品名'
     ],
-    tools: ['Cursor', 'Claude', 'ChatGPT', 'GitHub Copilot Chat'],
-    updatePolicy: '购买后可免费获取同系列小版本更新；重大改版会通过微信提前通知。'
+    supportedTools: ['Cursor', 'Claude Code', 'ChatGPT / 其他对话式 AI'],
+    updatePolicy: '购买后可享受对应内容的后续更新，重大更新通过微信通知。'
   },
   {
     id: 'code-flow',
@@ -71,16 +71,16 @@ export const products: Product[] = [
     description: 'Vite + React + Tailwind 暗色脚手架，十分钟进入写功能状态。',
     price: '¥79',
     longDescription:
-      '为周末独立开发者准备的现代前端起点：Vite + React + TypeScript + Tailwind，内置暗色主题、Linear 风格 token、目录规范与基础组件约定。目标不是「再学一套框架」，而是打开就能写页面，少花时间在配环境上。',
+      '基于 Vite + React + TypeScript + Tailwind 的现代脚手架，预设暗色主题与 Linear 风格设计 token、目录规范与开发体验优化。目标是让周末独立开发者在约 15 分钟内进入「写功能」状态，而不是先花一小时配环境。',
     buyUrl: '',
     image: '/products/code-flow.svg',
     wechat: 'MEYRA1219',
     features: [
-      'Vite + React + TypeScript + Tailwind 开箱即用',
-      '暗色主题与设计 token，默认接近 Linear 观感',
-      '清晰目录结构与组件规范，减少后期返工',
-      '预留规则文件位置，方便接入 Cursor / Claude',
-      'README 含启动、改主题、加页面的最短路径'
+      'Vite + React + TypeScript + Tailwind 完整配置',
+      '内置暗色主题与 Linear 风格设计 token',
+      '预设组件结构与目录规范，减少从零组织代码的时间',
+      '开箱即用的热更新、路径别名等开发体验优化',
+      '可作为新产品起点，也可按需裁剪'
     ],
     audience: [
       '只有周末时间、想马上开工的独立开发者',
@@ -95,21 +95,21 @@ export const products: Product[] = [
       '在同一套设计 token 上扩展多个小产品'
     ],
     deliverables: [
-      '完整项目脚手架源码（Vite + React + TS + Tailwind）',
+      '完整项目源码（可直接 npm install 运行）',
       '暗色主题与设计 token 配置',
-      '目录结构与组件规范说明',
-      '快速启动 README',
-      '后续更新权限（微信通知）'
+      'README 快速启动说明',
+      '目录与组件规范说明',
+      '后续模板更新权限'
     ],
     gettingStarted: [
       '解压后进入项目目录',
-      '执行 npm install 安装依赖',
-      '执行 npm run dev 启动本地预览',
-      '按 README 修改首页文案、主题色与路由',
-      '需要 AI 协作时，把规则片段放进项目根目录'
+      '执行 npm install',
+      '执行 npm run dev，浏览器打开本地地址',
+      '按 README 修改页面与组件，开始写功能',
+      '需要统一 AI 规则时，可搭配 Vibe Prompt Kit 中的规则片段'
     ],
-    tools: ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Cursor'],
-    updatePolicy: '购买后可免费获取依赖升级与模板小版本更新；破坏性升级会单独说明迁移方式。'
+    supportedTools: ['Node.js + npm / pnpm', 'Cursor / VS Code', '现代浏览器'],
+    updatePolicy: '购买后可享受模板后续更新，重大结构变更会说明迁移方式。'
   },
   {
     id: 'ai-cheatsheet',
@@ -117,16 +117,16 @@ export const products: Product[] = [
     description: '中文优先的高频 AI 指令速查，卡住时直接翻，不用现编。',
     price: '¥29',
     longDescription:
-      '把最常用的 AI 编程指令、调试与重构话术整理成轻量速查表。面向已经在用 Cursor / Claude 的开发者：不是长教程，而是放在手边、搜得到、复制就能用的中文指令清单。',
+      '按场景整理的中文 AI 编程速查：启动、重构、调试、文档与解释代码。不是厚教程，而是卡住时能立刻翻到的指令参考，减少临时想提示词和搜索英文模板的时间。',
     buyUrl: '',
     image: '/products/ai-cheatsheet.svg',
     wechat: 'MEYRA1219',
     features: [
-      '高频场景指令：生成、重构、调试、解释、补测试',
-      '中文优先，减少临时翻译英文模板',
-      '按「卡住类型」组织，方便快速定位',
-      '可打印 / 可收藏，适合桌面常备',
-      '持续更新，跟随主流 AI 编程工具变化'
+      '按场景分类：启动 / 重构 / 调试 / 文档 / 解释代码',
+      '指令写法强调约束与可验证结果',
+      '中文优先，表达更自然',
+      '轻量易读，适合收藏或打印',
+      '持续更新，跟随常用工具变化'
     ],
     audience: [
       '日常用 AI 写代码、希望少想提示词的人',
@@ -141,19 +141,18 @@ export const products: Product[] = [
       '给新人一份「先翻这里」的入门清单'
     ],
     deliverables: [
-      'AI 编程速查表（Markdown / 可打印版建议）',
+      'AI 编程速查表（Markdown，可选打印建议）',
       '按场景整理的指令与技巧',
-      '常用调试 / 重构话术摘录',
-      '后续内容更新权限（微信通知）'
+      '后续内容更新权限'
     ],
     gettingStarted: [
-      '下载文件并收藏到本地或笔记软件',
-      '遇到卡住场景时，先搜对应分类',
-      '复制指令到 Cursor / Claude / ChatGPT 使用',
-      '按项目补上文件路径、报错原文等上下文',
-      '有新场景需求可以微信反馈给我'
+      '打开或收藏速查表文件',
+      '写代码卡住时，按场景定位对应指令',
+      '复制到 Cursor / Claude 等工具中使用',
+      '可打印一份放在手边',
+      '有新场景需求可反馈，便于后续更新'
     ],
-    tools: ['Cursor', 'Claude', 'ChatGPT', 'GitHub Copilot Chat'],
-    updatePolicy: '购买后可免费获取内容增补与修订；新增场景包会优先推送给已购用户。'
+    supportedTools: ['Cursor', 'Claude Code', 'ChatGPT / 其他对话式 AI'],
+    updatePolicy: '购买后可享受速查内容的后续更新，新增场景会同步补充。'
   }
 ]

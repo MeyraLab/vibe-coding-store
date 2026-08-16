@@ -62,25 +62,6 @@ export function ProductDetail() {
           {product.longDescription || product.description}
         </p>
 
-        {/* 适用工具 */}
-        {product.tools && product.tools.length > 0 && (
-          <section className="mt-8">
-            <h2 className="text-lg font-medium tracking-tight text-text-primary">
-              适用工具
-            </h2>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {product.tools.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-border bg-surface px-3 py-1.5 text-sm text-text-secondary"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </section>
-        )}
-
         {/* 功能列表 */}
         {product.features && product.features.length > 0 && (
           <section className="mt-12">
@@ -155,7 +136,7 @@ export function ProductDetail() {
         {product.gettingStarted && product.gettingStarted.length > 0 && (
           <section className="mt-10">
             <h2 className="text-lg font-medium tracking-tight text-text-primary">
-              开箱即用步骤
+              如何开始使用
             </h2>
             <ol className="mt-4 space-y-3">
               {product.gettingStarted.map((item, index) => (
@@ -170,11 +151,32 @@ export function ProductDetail() {
           </section>
         )}
 
-        {/* 更新说明 */}
+        {/* 适用工具 */}
+        {product.supportedTools && product.supportedTools.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              适用工具
+            </h2>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {product.supportedTools.map((tool) => (
+                <span
+                  key={tool}
+                  className="rounded-full border border-border bg-surface px-3 py-1.5 text-sm text-text-secondary"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 更新方式 */}
         {product.updatePolicy && (
-          <section className="mt-10 rounded-xl border border-border bg-surface p-5">
-            <h2 className="text-sm font-medium text-text-primary">更新说明</h2>
-            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+          <section className="mt-10">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              更新方式
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
               {product.updatePolicy}
             </p>
           </section>
