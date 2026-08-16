@@ -11,6 +11,8 @@ export interface Product {
   features?: string[]
   audience?: string[]
   scenarios?: string[]
+  deliverables?: string[]
+  gettingStarted?: string[]
 }
 
 export const products: Product[] = [
@@ -44,6 +46,19 @@ export const products: Product[] = [
       '写 README、API 文档或产品说明',
       '描述 UI / 交互给设计或开发工具',
       '日常调试与问题排查时的提示词参考'
+    ],
+    deliverables: [
+      '完整 Prompt 模板文件（Markdown / 可直接复制）',
+      '按场景分类的使用说明',
+      '最佳实践与微调建议',
+      '后续更新权限（通过微信通知）'
+    ],
+    gettingStarted: [
+      '收到文件后，用任意文本编辑器打开',
+      '根据当前任务选择对应场景的 Prompt',
+      '直接复制到 Cursor / Claude / ChatGPT 使用',
+      '按项目情况微调关键词，效果会更好',
+      '遇到问题随时微信联系我'
     ]
   },
   {
@@ -74,6 +89,20 @@ export const products: Product[] = [
       '接外包或个人产品，需要统一的基础模板',
       '学习现代前端栈，想要一个干净的起点',
       '想在自己项目里复用同一套暗色设计系统'
+    ],
+    deliverables: [
+      '完整项目脚手架源码（Vite + React + TS + Tailwind）',
+      '暗色主题与设计 token 配置',
+      '预设目录结构与组件规范说明',
+      '快速启动文档（README）',
+      '后续更新权限'
+    ],
+    gettingStarted: [
+      '解压后进入项目目录',
+      '执行 npm install 安装依赖',
+      '执行 npm run dev 启动开发服务器',
+      '按 README 说明开始修改页面与组件',
+      '需要调整主题或结构时，参考设计 token 文件'
     ]
   },
   {
@@ -104,6 +133,19 @@ export const products: Product[] = [
       '调试报错时想用 AI 帮忙定位',
       '给新人准备一份可分享的速查清单',
       '日常工作中作为提示词灵感来源'
+    ],
+    deliverables: [
+      'AI 编程速查表文件（Markdown / PDF）',
+      '按场景整理的指令与技巧',
+      '可打印版本建议',
+      '后续内容更新权限'
+    ],
+    gettingStarted: [
+      '收到文件后收藏或下载到本地',
+      '写代码卡住时直接搜索对应场景',
+      '复制指令到 AI 工具中使用',
+      '可打印一份放在桌面随时查阅',
+      '有新场景需求可以反馈给我'
     ]
   }
 ]

@@ -115,6 +115,42 @@ export function ProductDetail() {
           </section>
         )}
 
+        {/* 购买后你会收到什么 */}
+        {product.deliverables && product.deliverables.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              购买后你会收到什么
+            </h2>
+            <ul className="mt-4 space-y-3">
+              {product.deliverables.map((item) => (
+                <li key={item} className="flex gap-3 text-sm leading-relaxed text-text-secondary">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* 如何开始使用 */}
+        {product.gettingStarted && product.gettingStarted.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-lg font-medium tracking-tight text-text-primary">
+              如何开始使用
+            </h2>
+            <ol className="mt-4 space-y-3">
+              {product.gettingStarted.map((item, index) => (
+                <li key={item} className="flex gap-3 text-sm leading-relaxed text-text-secondary">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-soft text-xs font-medium text-accent">
+                    {index + 1}
+                  </span>
+                  <span className="pt-0.5">{item}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
         <div className="mt-10 flex flex-col gap-4">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             {product.buyUrl ? (
