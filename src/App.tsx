@@ -24,6 +24,9 @@ function App() {
             <a href="#updates" className="hover:text-text-primary transition-colors">
               更新
             </a>
+            <a href="#stories" className="hover:text-text-primary transition-colors">
+              场景
+            </a>
             <a href="#faq" className="hover:text-text-primary transition-colors">
               FAQ
             </a>
@@ -73,6 +76,41 @@ function App() {
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
+        </div>
+      </section>
+
+      {/* 使用场景 */}
+      <section id="stories" className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32">
+        <div className="mb-10">
+          <h2 className="text-2xl font-medium tracking-tight text-text-primary sm:text-3xl">
+            使用场景
+          </h2>
+          <p className="mt-2 text-text-secondary">
+            这些工具是为真实工作流设计的，不是演示。
+          </p>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border border-border bg-surface p-5">
+            <p className="text-sm leading-relaxed text-text-secondary">
+              「周末想启动一个 side project，但不想从零配环境。用 Code Flow 模板，十分钟就能进入写功能的状态。」
+            </p>
+            <p className="mt-4 text-xs text-text-muted">独立开发者 · 副业项目</p>
+          </div>
+
+          <div className="rounded-2xl border border-border bg-surface p-5">
+            <p className="text-sm leading-relaxed text-text-secondary">
+              「用 AI 写代码时总要反复改提示词。Vibe Prompt Kit 把高频场景整理好了，直接复制就能用，感觉顺很多。」
+            </p>
+            <p className="mt-4 text-xs text-text-muted">前端工程师 · 日常开发</p>
+          </div>
+
+          <div className="rounded-2xl border border-border bg-surface p-5">
+            <p className="text-sm leading-relaxed text-text-secondary">
+              「调试和重构时经常卡住。AI 编程速查放在手边，卡住就翻一下对应指令，比自己临时想提示词快。」
+            </p>
+            <p className="mt-4 text-xs text-text-muted">全栈开发 · 问题排查</p>
+          </div>
         </div>
       </section>
 
@@ -218,6 +256,7 @@ function App() {
             <a href="#products" className="hover:text-text-primary transition-colors">产品</a>
             <a href="#about" className="hover:text-text-primary transition-colors">关于</a>
             <a href="#updates" className="hover:text-text-primary transition-colors">更新</a>
+            <a href="#stories" className="hover:text-text-primary transition-colors">场景</a>
             <a href="#faq" className="hover:text-text-primary transition-colors">FAQ</a>
           </div>
           <div className="text-sm text-text-muted">
