@@ -1,8 +1,11 @@
+import { useState } from 'react'
 import './index.css'
 import { ProductCard } from './components/ProductCard'
 import { products } from './data/products'
 
 function App() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
+
   return (
     <div className="min-h-screen bg-canvas text-text-primary">
       {/* 导航 */}
@@ -141,48 +144,64 @@ function App() {
           </p>
         </div>
 
-        <div className="max-w-2xl space-y-4">
-          <div className="rounded-xl border border-border bg-surface p-5">
-            <h3 className="text-sm font-medium text-text-primary">如何购买？</h3>
-            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-              进入产品详情页，点击「立即购买」，添加微信号 MEYRA1219，备注产品名称即可。支持微信支付和支付宝。
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-surface p-5">
-            <h3 className="text-sm font-medium text-text-primary">购买后多久能收到？</h3>
-            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-              确认支付后，通常在 1–12 小时内通过微信或邮箱发送下载链接。大部分情况会更快处理。
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-surface p-5">
-            <h3 className="text-sm font-medium text-text-primary">支持退款吗？</h3>
-            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-              数字产品一旦发送下载链接后原则上不支持退款。如遇文件损坏或无法打开，请及时联系我，我会协助解决或补发。
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-surface p-5">
-            <h3 className="text-sm font-medium text-text-primary">产品会持续更新吗？</h3>
-            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-              会。购买后可享受对应产品的后续更新。重大更新会通过微信或网站「更新」区块通知。
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-surface p-5">
-            <h3 className="text-sm font-medium text-text-primary">适合什么人使用？</h3>
-            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-              主要面向独立开发者、想提升 AI 编程效率的工程师，以及喜欢暗色界面与简洁工作流的人。新手也能直接上手。
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-surface p-5">
-            <h3 className="text-sm font-medium text-text-primary">可以商用吗？</h3>
-            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-              可以用于个人项目和商业项目。禁止二次销售或公开重新分发原文件。具体授权以购买时说明为准。
-            </p>
-          </div>
+        <div className="max-w-2xl divide-y divide-border rounded-xl border border-border bg-surface overflow-hidden">
+          {[
+            {
+              q: '如何购买？',
+              a: '进入产品详情页，点击「立即购买」，添加微信号 MEYRA1219，备注产品名称即可。支持微信支付和支付宝。'
+            },
+            {
+              q: '购买后多久能收到？',
+              a: '确认支付后，通常在 1–12 小时内通过微信或邮箱发送下载链接。大部分情况会更快处理。'
+            },
+            {
+              q: '支持退款吗？',
+              a: '数字产品一旦发送下载链接后原则上不支持退款。如遇文件损坏或无法打开，请及时联系我，我会协助解决或补发。'
+            },
+            {
+              q: '产品会持续更新吗？',
+              a: '会。购买后可享受对应产品的后续更新。重大更新会通过微信或网站「更新」区块通知。'
+            },
+            {
+              q: '适合什么人使用？',
+              a: '主要面向独立开发者、想提升 AI 编程效率的工程师，以及喜欢暗色界面与简洁工作流的人。新手也能直接上手。'
+            },
+            {
+              q: '可以商用吗？',
+              a: '可以用于个人项目和商业项目。禁止二次销售或公开重新分发原文件。具体授权以购买时说明为准。'
+            }
+          ].map((item, index) => {
+            const isOpen = openFaq === index
+            return (
+              <div key={index}>
+                <button
+                  type="button"
+                  onClick={() => setOpenFaq(isOpen ? null : index)}
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-surface-elevated"
+                >
+                  <span className="text-sm font-medium text-text-primary">{item.q}</span>
+                  <span
+                    className={`shrink-0 text-text-muted transition-transform duration-200 ${
+                      isOpen ? 'rotate-45' : ''
+                    }`}
+                  >
+                    +
+                  </span>
+                </button>
+                <div
+                  className={`grid transition-all duration-200 ease-out ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-5 pb-4 text-sm leading-relaxed text-text-secondary">
+                      {item.a}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </section>
 
